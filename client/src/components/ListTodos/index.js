@@ -1,6 +1,8 @@
 import axios from "axios";
 import { Fragment, useEffect, useState } from "react";
 import React from 'react';
+import EditTodo from '../EditTodo';
+
 
 const ListTodos = () => {
 
@@ -52,7 +54,8 @@ const ListTodos = () => {
                         todos.map(todo => (
                             <tr key={todo.todo_id}>
                                 <td>{todo.description}</td>
-                                <td>Edit</td>
+                                <td><EditTodo todo={todo}
+                                /></td>
                                 <td>
                                     <button className="btn btn-danger" onClick={() => deleteTodo(todo.todo_id)}>
                                         Delete
